@@ -46,7 +46,9 @@
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
-    animation: fadeInDown 0.8s ease-out;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 0.8s ease-out forwards;
 }
 
 .nav-menu li:nth-child(1) { animation-delay: 0.1s; }
