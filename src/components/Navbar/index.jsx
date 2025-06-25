@@ -1,11 +1,10 @@
 import React from "react";
-import logo from '../../assets/react.svg'
 import './index.css'
 
 function Navbar() {
     return (
         <div className="navbar">
-            <img src={logo} alt="" />
+            <h1 className="nav-logo">Joseph<span>.</span></h1>
             <ul className="nav-menu">
                 <li>Home</li>
                 <li>About</li>

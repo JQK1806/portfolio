@@ -1,20 +1,16 @@
 import React from "react";
 import './index.css'
+import logo from '../../assets/react.svg'
 
 const Hero = () => {
     return (
         <div className="hero">
-            {/* TODO : ADD PROFILE PICTURE */}
-            <h1><span>I'm Joseph King,</span> software developer</h1>
-            <p>I am ...</p>
-            <div className="hero-action">
-                <div className="hero-connect">
-                    Connect with me
-                </div>
-                <div className="hero-resume">
-                    Resume
-                </div>
+            <div className="hero-about">
+                <h1>Hello I'm <span>Joseph King</span></h1>
+                <h2>A passionate developer crafting beautiful and functional web experiences with modern technologies.</h2>
             </div>
+            {/* TEMP IMG */}
+            <img src={logo} alt="Joseph King - Developer" />
         </div>
     )
 }
