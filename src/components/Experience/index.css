@@ -1,0 +1,153 @@
+.experience-section {
+    min-height: 100vh;
+    padding: 80px 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-margin-top: 80px;
+}
+
+.experience-content {
+    max-width: 1000px;
+    text-align: center;
+}
+
+.experience-content h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 30px;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, cyan 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.experience-content > p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.experience-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 40px;
+    position: relative;
+}
+
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(135deg, #667eea 0%, cyan 100%);
+    transform: translateX(-50%);
+}
+
+.experience-item {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+}
+
+.experience-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.experience-date {
+    flex: 0 0 120px;
+    font-weight: 600;
+    color: #667eea;
+    font-size: 1.1rem;
+}
+
+.experience-details {
+    flex: 1;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-details:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.experience-details::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 15px;
+    height: 15px;
+    background: linear-gradient(135deg, #667eea 0%, cyan 100%);
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.experience-item:nth-child(odd) .experience-details::before {
+    right: -47px;
+}
+
+.experience-item:nth-child(even) .experience-details::before {
+    left: -47px;
+}
+
+.experience-details h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.experience-details h4 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #667eea;
+    font-weight: 500;
+}
+
+.experience-details p {
+    color: #666;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .experience-section {
+        padding: 60px 20px;
+    }
+    
+    .experience-timeline::before {
+        left: 30px;
+    }
+    
+    .experience-item {
+        flex-direction: column !important;
+        align-items: flex-start;
+        padding-left: 60px;
+    }
+    
+    .experience-item:nth-child(even) {
+        flex-direction: column !important;
+    }
+    
+    .experience-date {
+        flex: none;
+        margin-bottom: 15px;
+    }
+    
+    .experience-details::before {
+        left: -47px !important;
+    }
+    
+    .experience-details {
+        text-align: left;
+    }
+}
