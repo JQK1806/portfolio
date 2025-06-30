@@ -1,15 +1,25 @@
 import React from "react";
 import './index.css'
 
-function Navbar() {
+const Navbar = () => {
+    const scrollToSection = (sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }
+    };
+
     return (
         <div className="navbar">
-            <h1 className="nav-logo">Joseph<span>.</span></h1>
+            <h1 className="nav-logo" onClick={() => scrollToSection('home')}>Joseph<span>.</span></h1>
             <ul className="nav-menu">
-                <li>Home</li>
-                <li>About</li>
-                <li>Experience</li>
-                <li>Projects</li>
+                <li onClick={() => scrollToSection('home')}>Home</li>
+                <li onClick={() => scrollToSection('about')}>About</li>
+                <li onClick={() => scrollToSection('experience')}>Experience</li>
+                <li onClick={() => scrollToSection('projects')}>Projects</li>
             </ul>
             <div className="nav-connect">
                 Connect with me
