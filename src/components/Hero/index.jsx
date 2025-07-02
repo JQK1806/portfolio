@@ -7,7 +7,7 @@ const Hero = () => {
         <div className="hero">
             <div className="hero-about">
                 <h1>Hello I'm <span>Joseph King</span></h1>
-                <h2>A passionate developer crafting beautiful and functional web experiences with modern technologies.</h2>
+                <h2>Placeholder...</h2>
             </div>
             {/* TEMP IMG */}
             <img src={logo} alt="Joseph King - Developer" />
