@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import './index.css';
+import useImageCarousel from './useImageCarousel';
 
 import huskyDoctorHome from '../../assets/HuskyHealth/doctor_home.png';
 import huskyDoctorHome2 from '../../assets/HuskyHealth/doctor_home2.png';
@@ -45,19 +46,13 @@ const Projects = () => {
     ];
 
     const ImageCarousel = ({ images, projectName }) => {
-        const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-        const nextImage = () => {
-            setCurrentImageIndex((prevIndex) => 
-                prevIndex === images.length - 1 ? 0 : prevIndex + 1
-            );
-        };
-
-        const prevImage = () => {
-            setCurrentImageIndex((prevIndex) => 
-                prevIndex === 0 ? images.length - 1 : prevIndex - 1
-            );
-        };
+        const { 
+            currentImageIndex, 
+            nextImage, 
+            prevImage, 
+            goToImage, 
+            hasMultipleImages 
+        } = useImageCarousel(images);
 
         return (
             <div className="project-image-carousel">
@@ -66,7 +61,7 @@ const Projects = () => {
                     alt={`${projectName} screenshot ${currentImageIndex + 1}`}
                     className="carousel-image"
                 />
-                {images.length > 1 && (
+                {hasMultipleImages && (
                     <>
                         <button 
                             className="carousel-btn carousel-btn-prev"
@@ -87,7 +82,7 @@ const Projects = () => {
                                 <button
                                     key={index}
                                     className={`indicator ${index === currentImageIndex ? 'active' : ''}`}
-                                    onClick={() => setCurrentImageIndex(index)}
+                                    onClick={() => goToImage(index)}
                                     aria-label={`Go to image ${index + 1}`}
                                 />
                             ))}
