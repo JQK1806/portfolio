@@ -5,25 +5,8 @@
     align-items: center;
     justify-content: space-between;
     scroll-margin-top: 80px;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #7209b7 100%);
     position: relative;
-    overflow: hidden;
     gap: 40px;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 80%, rgba(120, 9, 183, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(15, 52, 96, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(83, 52, 131, 0.2) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: 1;
 }
 
 .hero-about {
