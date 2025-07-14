@@ -5,28 +5,31 @@
     align-items: center;
     justify-content: center;
     scroll-margin-top: 80px;
-    background-color: #f8f9fa;
+    position: relative;
 }
 
 .projects-content {
     max-width: 1200px;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .projects-content h2 {
     font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: 30px;
-    color: #333;
-    background: linear-gradient(135deg, #667eea 0%, cyan 100%);
+    color: #fff;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
 }
 
 .projects-content > p {
     font-size: clamp(1rem, 2vw, 1.2rem);
     line-height: 1.6;
-    color: #666;
+    color: #b8c2cc;
     margin-bottom: 50px;
 }
 
@@ -38,21 +41,23 @@
 }
 
 .project-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
 }
 
 .project-image {
     height: 200px;
-    background: linear-gradient(135deg, #667eea 0%, cyan 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,7 +85,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     color: white;
     border: none;
     padding: 8px 12px;
@@ -94,11 +99,13 @@
     justify-content: center;
     transition: all 0.3s ease;
     z-index: 2;
+    backdrop-filter: blur(5px);
 }
 
 .carousel-btn:hover {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(102, 126, 234, 0.8);
     transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 15px rgba(102, 126, 234, 0.5);
 }
 
 .carousel-btn-prev {
@@ -124,14 +131,14 @@
     height: 8px;
     border-radius: 50%;
     border: none;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.4);
     cursor: pointer;
     transition: background 0.3s ease;
-    background-color: lightgray;
 }
 
 .indicator.active {
-    background: grey;
+    background: #667eea;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
 }
 
 .indicator:hover {
@@ -153,11 +160,15 @@
 .project-info h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: #333;
+    color: #fff;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .project-info p {
-    color: #666;
+    color: #b8c2cc;
     line-height: 1.6;
     margin-bottom: 20px;
 }
@@ -171,11 +182,12 @@
 
 .project-tech span {
     padding: 5px 12px;
-    background: linear-gradient(135deg, #667eea 0%, cyan 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border-radius: 15px;
     font-size: 0.9rem;
     font-weight: 500;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
 .project-links {
@@ -194,7 +206,7 @@
 }
 
 .project-links button:first-child {
-    background: linear-gradient(135deg, #667eea 0%, cyan 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
 }
 
@@ -213,6 +225,7 @@
     background: #667eea;
     color: white;
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
 @media (max-width: 768px) {

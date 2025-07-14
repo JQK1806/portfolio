@@ -1,22 +1,19 @@
 import './App.css'
-import Navbar from './components/Navbar/index'
-import Hero from './components/Hero/index'
-import About from './components/About/index'
-import Experience from './components/Experience/index'
-import Projects from './components/Projects/index'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import About from './components/About'
+import Experience from './components/Experience'
+import Projects from './components/Projects'
 
 function App() {
-
   return (
-    <>
+    <div className="App">
       <Navbar />
-      <section id="home">
-        <Hero />
-      </section>
-      <About />
-      <Experience />
-      <Projects />
-    </>
+      <div id="home"><Hero /></div>
+      <div id="about"><About /></div>
+      <div id="experience"><Experience /></div>
+      <div id="projects"><Projects /></div>
+    </div>
   )
 }
 
