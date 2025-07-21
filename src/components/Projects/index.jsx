@@ -13,6 +13,7 @@ import shortStackCommunityPoll from '../../assets/ShortStack/community_poll.png'
 import shortStackCommunityQuestion from '../../assets/ShortStack/community_question.png';
 import shortStackHome from '../../assets/ShortStack/home.png';
 import shortStackProfileRewards from '../../assets/ShortStack/profile_rewards.png';
+import modelLoss from '../../assets/AIEnergy/loss_plot.png';
 
 const Projects = () => {
     const projects = [
@@ -46,6 +47,15 @@ const Projects = () => {
             ],
             githubUrl: "https://github.com/neu-cs4530/shortstack",
             liveUrl: "https://cs4530-f24-808.onrender.com/"
+        },
+        {
+            id: 3,
+            name: "AI Model for Home Energy Optimization",
+            description: "A model to reduce the cost of electricity and optimize the users’ comfort in a smart home. The model will manage the temperature of a room based on the current outside temperature and the occupancy level of the room.",
+            technologies: ["Python", "PyTorch", "TensorFlow"],
+            images: [modelLoss],
+            githubUrl: "https://github.com/JQK1806/CS4100-Project",
+            liveUrl: null,
         }
     ];
 
