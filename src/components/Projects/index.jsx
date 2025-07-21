@@ -13,6 +13,7 @@ import shortStackCommunityPoll from '../../assets/ShortStack/community_poll.png'
 import shortStackCommunityQuestion from '../../assets/ShortStack/community_question.png';
 import shortStackHome from '../../assets/ShortStack/home.png';
 import shortStackProfileRewards from '../../assets/ShortStack/profile_rewards.png';
+import modelLoss from '../../assets/AIEnergy/loss_plot.png';
 
 const Projects = () => {
     const projects = [
@@ -28,7 +29,9 @@ const Projects = () => {
                 huskyDoctorHome,
                 huskyDoctorHome2,
                 huskyProviderHome
-            ]
+            ],
+            githubUrl: "https://github.com/JQK1806/Husky-Health-CS3200",
+            liveUrl: null
         },
         {
             id: 2,
@@ -41,7 +44,18 @@ const Projects = () => {
                 shortStackCommunityQuestion,
                 shortStackCommunityPoll,
                 shortStackProfileRewards
-            ]
+            ],
+            githubUrl: "https://github.com/neu-cs4530/shortstack",
+            liveUrl: "https://cs4530-f24-808.onrender.com/"
+        },
+        {
+            id: 3,
+            name: "AI Model for Home Energy Optimization",
+            description: "A model to reduce the cost of electricity and optimize the users’ comfort in a smart home. The model will manage the temperature of a room based on the current outside temperature and the occupancy level of the room.",
+            technologies: ["Python", "PyTorch", "TensorFlow"],
+            images: [modelLoss],
+            githubUrl: "https://github.com/JQK1806/CS4100-Project",
+            liveUrl: null,
         }
     ];
 
@@ -93,6 +107,12 @@ const Projects = () => {
         );
     };
 
+    const handleLinkClick = (url) => {
+        if (url) {
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
+    };
+
     return (
         <section id="projects" className="projects-section">
             <div className="projects-content">
@@ -113,8 +133,20 @@ const Projects = () => {
                                     ))}
                                 </div>
                                 <div className="project-links">
-                                    <button>View Live</button>
-                                    <button>View Code</button>
+                                    <button 
+                                        onClick={() => handleLinkClick(project.liveUrl)}
+                                        disabled={!project.liveUrl}
+                                        className={!project.liveUrl ? 'disabled' : ''}
+                                    >
+                                        View Live
+                                    </button>
+                                    <button 
+                                        onClick={() => handleLinkClick(project.githubUrl)}
+                                        disabled={!project.githubUrl}
+                                        className={!project.githubUrl ? 'disabled' : ''}
+                                    >
+                                        View Code
+                                    </button>
                                 </div>
                             </div>
                         </div>
