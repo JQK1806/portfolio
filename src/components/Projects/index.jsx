@@ -28,7 +28,9 @@ const Projects = () => {
                 huskyDoctorHome,
                 huskyDoctorHome2,
                 huskyProviderHome
-            ]
+            ],
+            githubUrl: "https://github.com/JQK1806/Husky-Health-CS3200",
+            liveUrl: null
         },
         {
             id: 2,
@@ -41,7 +43,9 @@ const Projects = () => {
                 shortStackCommunityQuestion,
                 shortStackCommunityPoll,
                 shortStackProfileRewards
-            ]
+            ],
+            githubUrl: "https://github.com/neu-cs4530/shortstack",
+            liveUrl: "https://cs4530-f24-808.onrender.com/"
         }
     ];
 
@@ -93,6 +97,12 @@ const Projects = () => {
         );
     };
 
+    const handleLinkClick = (url) => {
+        if (url) {
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
+    };
+
     return (
         <section id="projects" className="projects-section">
             <div className="projects-content">
@@ -113,8 +123,20 @@ const Projects = () => {
                                     ))}
                                 </div>
                                 <div className="project-links">
-                                    <button>View Live</button>
-                                    <button>View Code</button>
+                                    <button 
+                                        onClick={() => handleLinkClick(project.liveUrl)}
+                                        disabled={!project.liveUrl}
+                                        className={!project.liveUrl ? 'disabled' : ''}
+                                    >
+                                        View Live
+                                    </button>
+                                    <button 
+                                        onClick={() => handleLinkClick(project.githubUrl)}
+                                        disabled={!project.githubUrl}
+                                        className={!project.githubUrl ? 'disabled' : ''}
+                                    >
+                                        View Code
+                                    </button>
                                 </div>
                             </div>
                         </div>
