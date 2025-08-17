@@ -110,8 +110,8 @@
 }
 
 .skill-icons {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 0.8rem;
     flex-grow: 1;
     align-content: start;
